@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPort</title>
+     <link rel="stylesheet" href="./css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+<header>
+    <div class="container-fluid">
+        <div class="row header_layout">
+            <div class="col" align="left"> 
+                <div id="mainLogo">MyPort</div>
+            </div>
+            <div class="col login_btn" align="right">
+                <h3 id="status"> Login... </h3>
+                <button id="out">ログアウト</button>
+            </div>
+    </div>
+</header>
+
+<main>
+    <div class="container-fluid top_visual">
+        <div class="top_texts">
+            <h1>MyPort</h1>
+            <h4>〜Be a GEEK〜</h4>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container mt-5 content_container">
+            <div class="row">
+                <div class="col">
+                    <h3>企業研究アウトプット</h3>
+                    <canvas id="myRaderChart"></canvas>
+                </div>
+                <div class="col">
+                    <div id="CompanyInfo" class="mb-2">
+                        <div>
+                            <label for="name">企業名(1~50文字):</label>
+                            <input type="text" id="companyName" name="name" required
+                                    minlength="1" maxlength="50" size="8" placeholder="企業名">
+                            <select id="genre">
+                                <option value="">業種を選んでください</option>
+                                <option value="">AI</option>
+                                <option value="">IoT</option>
+                                <option value="">Web3.0</option>
+                                <option value="">教育</option>
+                                <option value="">農業</option>
+                                <option value="">建築</option>
+                                <option value="">メーカー</option>
+                                <option value="">ソフトウェア</option>
+                                <option value="">金融</option>
+                                <option value="">広告・メディア</option>
+                                <option value="">インフラ</option>
+                                <option value="">エンタメ</option>
+                                <option value="">飲食</option>
+                                <option value="">バイオ</option>
+                                <option value="">環境</option>
+                            </select>
+                            <button id="push0">更新</button>
+                        </div>
+                    </div>
+                    <div class="col chart_exp">
+                        <div class="col>"> 
+                            <ul class="list-group"> 
+                                <li class="list-group-item">
+                                <div>
+                                    <label for="name">要素１(1~8文字):</label>
+                                    <input type="text" id="name1" name="name" required
+                                            minlength="1" maxlength="8" size="8" placeholder="独創力">
+                                    <select id="scores1" class="scores"></select>
+                                    <button id="push1">更新</button>
+                                </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <label for="name">要素２(1~8文字):</label>
+                                    <input type="text" id="name2" name="name" required
+                                            minlength="1" maxlength="8" size="8" placeholder="収益力">
+                                    <select id="scores2" class="scores"></select>
+                                    <button id="push2">更新</button>
+                                </li>
+                                <li class="list-group-item">
+                                    <label for="name">要素３(1~8文字):</label>
+                                    <input type="text" id="name3" name="name" required
+                                            minlength="1" maxlength="8" size="8" placeholder="人材">
+                                    <select id="scores3" class="scores"></select>
+                                    <button id="push3">更新</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col>">   
+                            <ul class="list-group"> 
+                                <li class="list-group-item">
+                                    <label for="name">要素４(1~8文字):</label>
+                                    <input type="text" id="name4" name="name" required
+                                            minlength="1" maxlength="8" size="8" placeholder="トレンド">
+                                    <select id="scores4" class="scores"></select>
+                                    <button id="push4">更新</button>
+                                </li>
+                                <li class="list-group-item">
+                                    <label for="name">要素５(1~8文字):</label>
+                                    <input type="text" id="name5" name="name" required
+                                            minlength="1" maxlength="8" size="8" placeholder="ワクワク">
+                                    <select id="scores5" class="scores"></select>
+                                    <button id="push5">更新</button>
+                                </li>
+                                <li class="list-group-item">
+                                    <label for="name">要素６(1~8文字):</label>
+                                    <input type="text" id="name6" name="name" required
+                                            minlength="1" maxlength="8" size="8" placeholder="マーケティング">
+                                    <select id="scores6" class="scores"></select>
+                                    <button id="push6">更新</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="container mt-5 content_container">
+            <div class="row barChart">
+                <div class="col">
+                    <h3>企業に関する要約＆考察</h3>
+                    <canvas id="myBarChart"></canvas>
+                </div class="col">
+                <div class="col chart_exp">
+                    <div>
+                        <div>
+                            <h6>要約</h6>
+                            <textarea name="summary" id="summary1" cols="30" rows="10"></textarea>
+                        </div>
+                        <div>
+                            <h6>考察</h6>
+                            <textarea name="summary" id="summary2" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="name" class="mt-3">記事URL:</label>
+                    <input id="urlpick" type="url">
+                </div>
+                <div id="saving" class="mt-2">
+                    <button id="save">この企業データを保存する</button>
+                </div>
+              </div>
+          </div>
+          <div class="container mt-5 mb-5 content_container">
+            <div class="row">
+              <div class="col">
+                <h3>ポートフォリオ</h3>
+                <canvas id="myPieChart"></canvas>
+              </div>
+              <div class="col chart_exp">
+                aaaaa
+              </div>
+            </div>
+          </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container-fluid">
+        <h6>MyPort</h6>
+    </div>
+</footer>
+
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- JQuery -->
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Chart.js -->
+
+<script type="module">
+ //###############################################
+// 必要なJSを読み込み
+//###############################################
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-auth.js";
+    
+
+ //###############################################
+// Your web app's Firebase configuration
+ //###############################################
+ const firebaseConfig = {
+
+  };
+    const app = initializeApp(firebaseConfig);
+    // const db = getDatabase(app);// RealTimeDB使うよ
+    // // ここで、dbのどこから何のデータを取ってくるのかを考える
+    // const dbRef = ref(db,"company");// RTDB内の"idea"内のデータをdbRefとする    
+
+
+//###############################################
+//GoogleAuth用
+//###############################################
+const provider = new GoogleAuthProvider();
+provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+const auth = getAuth();
+
+
+//###############################################
+// Loginしてる？
+//###############################################
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        console.log(user);
+                // const user = auth.currentUser;
+                if (user !== null) {
+                    user.providerData.forEach((profile) => {
+                        console.log("Sign-in provider: " + profile.providerId);
+                        console.log("  Provider-specific UID: " + profile.uid);
+                        console.log("  Name: " + profile.displayName);
+                        console.log("  Email: " + profile.email);
+                        console.log("  Photo URL: " + profile.photoURL);
+                    });
+                }
+    } else {
+        _redirect();  // User is signed out
+    }
+});
+
+
+//###############################################
+//Logout処理
+//###############################################
+$("#out").on("click", function () {
+    // signInWithRedirect(auth, provider);ß
+    signOut(auth).then(() => {
+        // Sign-out successful.
+        _redirect();
+    }).catch((error) => {
+        // An error happened.
+        console.error(error);
+    });
+});
+
+
+//###############################################
+//Login画面へ
+//###############################################
+function _redirect(){
+    location.href="login.html";
+}
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="./js/chart.js"></script>
+</body>
+
+</html>
